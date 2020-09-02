@@ -5,6 +5,9 @@ import os
 import time
 import subprocess
 
+""" if you activate the Resume botton, you need to activate the Pause Resume botton 
+in case to switch from any other button that play a song, because the timer will overlap!! """
+
 mixer.init()
 
 proc = subprocess.Popen(r "path of the timer.bat") #replace with the path of the timer.bat file
@@ -258,11 +261,7 @@ def Cue():
 
     global proc
 
-    global processo
-
     proc.terminate()
-
-    processo.kill()
 
     selection1 = Listbox.curselection(listbox1)
 
