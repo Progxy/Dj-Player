@@ -7,11 +7,11 @@ import subprocess
 
 mixer.init()
 
-proc = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\timer.bat")
+proc = subprocess.Popen(r "path of the timer.bat") #replace with the path of the timer.bat file
 
 proc.terminate()
 
-processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True)
+processo = subprocess.Popen(r "path of the resume_timer.bat", shell = True) #replace with the path of the resume_timer.bat file
 
 processo.terminate()
 
@@ -57,7 +57,7 @@ listbox1.grid(row = 10, column = 8)
 
 er = 0
 
-os.chdir(r"C:\Users\Emanuele\Desktop\python\progetti\Chiavetta USB")
+os.chdir(r "path music_position") # replace with the path of the folder of the music to play
 
 lista = os.listdir()
 
@@ -77,7 +77,7 @@ def load2 ():
 
     path_2 = lista[numero]
 
-    percorso = r"C:\Users\Emanuele\Desktop\python\progetti\Chiavetta USB"
+    percorso = r "path music_position" # replace with the path of the folder of the music to play 
 
     path = percorso + "\\" + path_2
 
@@ -85,14 +85,14 @@ def load2 ():
 
     canzone = path_2
 
-    print("\n\nCanzone Caricata!!")
+    print("\n\nSong Loaded!!")
 
     Loaded_song= Label(finestra, text = canzone, background = "light blue", font = 20)
     Loaded_song.grid(row=5, column=5)
 
     finestra.update_idletasks()
 
-def aggincoda():
+def queue(): # may this function not work, I will correct that issue as soon as possible!!
 
     selection = Listbox.curselection(listbox)
 
@@ -100,7 +100,7 @@ def aggincoda():
 
     path_2 = lista[numero]
 
-    percorso = r"C:\Users\Emanuele\Desktop\python\progetti\Chiavetta USB"
+    percorso = r "path music_position" # replace with the path of the folder of the music to play
 
     path = percorso + "\\" + path_2
  
@@ -108,7 +108,7 @@ def aggincoda():
 
     canzone = path_2
 
-    print ("\n\nCanzone aggiunta in coda!!")
+    print ("\n\nSong Queued!!")
 
     Loaded_song= Label(finestra, text = canzone, background = "light blue", font = 20)
     Loaded_song.grid(row=5, column=5)
@@ -122,14 +122,12 @@ def play_martingarrix():
     proc.terminate()
 
     pygame.mixer.music.play(0)
-    
-    os.chdir(r"C:\Users\Emanuele\Desktop\python\progetti")
 
-    proc = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\timer.bat")
+    proc = subprocess.Popen(r "path of the timer.bat") #replace with the path of the timer.bat file
 
     print ("\n\nPlaying!!")
 
-def remove_martingarrix():
+def remove_martingarrix(): # may this function not work, I will correct that issue as soon as possible!!
 
     global proc
 
@@ -151,7 +149,7 @@ def rewind_martingarrix():
 
     proc.terminate()
 
-    proc = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\timer.bat")
+    proc = subprocess.Popen(r "path of the timer.bat") #replace with the path of the timer.bat file
 
     pygame.mixer.music.rewind()
 
@@ -201,7 +199,7 @@ def resume_martingarrix():
 
     f.close()
 
-    processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True)
+    processo = subprocess.Popen(r "path of the resume_timer.bat", shell = True) #replace with the path of the resume_timer.bat file
 
     pygame.mixer.music.unpause()
 
@@ -222,7 +220,7 @@ def ctrl_volume():
 
     new_vol = float(new_vol1)
 
-    new_vol2 = "Il volume è : " + str(new_vol) 
+    new_vol2 = "The volume is : " + str(new_vol) 
 
     pygame.mixer.music.set_volume(new_vol)
 
@@ -235,7 +233,7 @@ def ctrl_volume():
 
     vol_impostato1 = round(vol, 1)
 
-    vol_impostato = "Il volume è : " + str(vol_impostato1) 
+    vol_impostato = "The volume is : " + str(vol_impostato1) 
 
     volume = Label(finestra, text = vol_impostato, background = "light blue", font = 20)
     volume.grid(row = 3, column = 9)
@@ -288,8 +286,8 @@ def Cue():
 
     f1.close()
 
-    processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True)
-
+    processo = subprocess.Popen(r "path of the resume_timer.bat", shell = True) #replace with the path of the resume_timer.bat file
+    
     def pause_cue():
 
         processo.terminate()
@@ -315,18 +313,12 @@ def get_volume():
 
     vol_impostato1 = round(vol, 1)
 
-    vol_impostato = "Il volume è : " + str(vol_impostato1)
+    vol_impostato = "The volume is : " + str(vol_impostato1)
 
     volume = Label(finestra, text = vol_impostato, background = "light blue", font = 20)
     volume.grid(row = 3, column = 9)
 
     finestra.update_idletasks()
- 
-"""pygame.mixer.music.get_busy()
-
-   pygame.mixer.music.set_endevent()
-       
-   pygame.mixer.music.get_endevent"""
 
 sp1 = Spinbox(finestra, from_ = 0.0, to = 1.0, increment = 0.1)
 sp1.grid(row = 8, column = 8)
