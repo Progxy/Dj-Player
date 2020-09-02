@@ -25,9 +25,9 @@ a = pygame.mixer.music.get_pos()
 
 finestra= Tk() 
 
-finestra.geometry ("1200x600")
-finestra.title ("Cdj Player")
-finestra.configure(background="light blue")
+finestra.geometry ("1200x600") # width x height could be change!!
+finestra.title ("Dj-Player") #title could be change!!
+finestra.configure(background="light blue") #color could be chanege!!
 
 scroll_bar = Scrollbar(finestra, orient = VERTICAL) 
 scroll_bar.grid(row = 10, column = 4)
