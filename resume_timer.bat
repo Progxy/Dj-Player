@@ -1,6 +1,8 @@
 @echo off
 
-set /p Build=<get_pos.txt
+set /p Build=<file.txt name 
+
+rem replace with the path of the file .txt get_pos , example: "C:\Users\user_name\Desktop\python\projects\get_pos.txt"
 
 set /a timer = Build
 
