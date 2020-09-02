@@ -279,7 +279,7 @@ def Cue():
 
     pygame.mixer.music.set_pos(pos)
 
-    f1 = open ("get_pos.txt", "w")
+    f1 = open (path_get_pos.txt, "w") #replace with the path of the file get_pos.txt, example: "C:\Users\user_name\Desktop\python\projects\get_pos.txt"
 
     f1.write(str(position_i))
 
