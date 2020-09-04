@@ -1,10 +1,11 @@
 # Dj-Player
+
 ONLY FOR WINDOWS!!!! (I WILL IMPLEMENT OTHER O.S. AS SOON AS POSSIBLE)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 REQUIREMENTS:
 
 The program need to install this package :
-pip install pygame (copy and execute this line in the cmd
+pip install pygame (copy and execute this line in the cmd)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSTALLATION:
 
