@@ -18,4 +18,7 @@ Run the .py in the IDLE or in Python's IDEs after read and replace the comments 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 FOR ANY ISSUES OR QUESTIONS CONSULT THE PROJECT WIKI, BEFORE ASKING ME!!
 
-!!If you want, report me to implement the executable version or to implement for more OS!!
+!! If you want, report me to implement the executable version !!
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+THANK YOU FOR UNDERSTANDING, Progxy :) !!
