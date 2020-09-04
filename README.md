@@ -1,5 +1,5 @@
 # Dj-Player
-ONLY FOR WINDOWS!!!! (I WILL IMPLEMENT OTHER OS AS SOON AS POSSIBLE)
+ONLY FOR WINDOWS!!!! (I WILL IMPLEMENT OTHER O.S. AS SOON AS POSSIBLE)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 REQUIREMENTS:
 
