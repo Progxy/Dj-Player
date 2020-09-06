@@ -14,13 +14,17 @@ from tkinter.ttk import *
 from os import path
 from pydub import AudioSegment
 
+"""Remember before the files path put 'r' followed by the path 
+
+like : (r"C:\...") """
+
 mixer.init()
 
-proc = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\timer.bat") 
+proc = subprocess.Popen(file _path_timer.bat) #replace with the timer.bat's path
 
 proc.terminate()
 
-processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True) #replace with the path of the resume_timer.bat file
+processo = subprocess.Popen(file_path_resume_timer.bat, shell = True) #replace with the path of the resume_timer.bat file
 
 processo.terminate()
 
@@ -36,7 +40,7 @@ n = 0
 
 a = pygame.mixer.music.get_pos()
 
-finestra= Tk() 
+finestra = Tk() 
 
 finestra.geometry ("1500x550")
 finestra.title ("Cdj Player")
@@ -72,7 +76,7 @@ er = 0
 
 try:
 
-    os.remove(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt")
+    os.remove(path_stop.txt) #replace with the stop.txt's path (the position must be equal for all the stop.txt)
 
 except BaseException:
 
@@ -82,7 +86,7 @@ durate = []
 
 lista_canzoni = []
 
-os.chdir(r"C:\Users\Emanuele\Desktop\python\progetti\Chiavetta USB") 
+os.chdir(path_songs_place)  # replace with the path of the folder of the music to play
 
 lista = os.listdir()
 
@@ -138,7 +142,7 @@ def play ():
     
     path_2 = lista_canzoni[n_song]
     
-    percorso = r"C:\Users\Emanuele\Desktop\python\progetti\Chiavetta USB" # replace with the path of the folder of the music to play 
+    percorso = path_songs_place # replace with the path of the folder of the music to play 
 
     path = percorso + "\\" + path_2
 
@@ -180,7 +184,7 @@ def play ():
 
     n_song += 1
 
-    f = open(r"C:\Users\Emanuele\Desktop\python\progetti\duration.txt", "w")
+    f = open(path_durate.txt, "w") #replace with the place of the durate.txt (the position must be equal for all the durate.txt)
 
     f.write(str(len_w))
 
@@ -190,7 +194,7 @@ def play ():
      
     plt.plot(data)
 
-    save_path = r"C:\Users\Emanuele\Desktop\python\progetti"
+    save_path = path_graphic #replace with the place of the path for the graphic (the position must be equal for all the path_graphic)
 
     file_save = save_path + "\\" + (file_wav.replace(".wav", ""))
 
@@ -336,7 +340,7 @@ def play ():
 
     pygame.mixer.music.play(0)
 
-    proc = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\timer.bat") #replace with the path of the timer.bat file
+    proc = subprocess.Popen(path_timer.bat) #replace with the path of the timer.bat file
 
     return durate, n_song, b_pmer
 
@@ -362,7 +366,7 @@ def rewind_martingarrix():
 
     proc.terminate()
 
-    proc = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\timer.bat") #replace with the path of the timer.bat file
+    proc = subprocess.Popen(path_timer.bat) #replace with the path of the timer.bat file
 
     pygame.mixer.music.rewind()
 
@@ -394,7 +398,7 @@ def resume_martingarrix():
 
     if (n_pause >= 1):
 
-        f3 = open(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt", "w")
+        f3 = open(path_stop.txt, "w") # replace with the stop.txt's path (the position must be equal for all the stop.txt)
 
         f3.write("3")
 
@@ -402,7 +406,7 @@ def resume_martingarrix():
 
     len_seconds = durate[n_song_r]
 
-    f = open (r"C:\Users\Emanuele\Desktop\python\progetti\get_pos.txt", "w")
+    f = open (path_get_pos.txt, "w") # replace with the path of get_pos.txt (the position must be equal for all the get_pos.txt)
 
     f.write(str(res_pass))
 
@@ -410,7 +414,7 @@ def resume_martingarrix():
 
     n_loop = int(len_seconds) - int(res_pass)
 
-    f1 = open (r"C:\Users\Emanuele\Desktop\python\progetti\n_loop.txt", "w")
+    f1 = open (path_n_loop.txt, "w") # replace with path of n_loop.txt (the position must be equal for all the n_loop.txt)
 
     f1.write(str(n_loop))
 
@@ -422,11 +426,11 @@ def resume_martingarrix():
 
         print ("elimino il .txt di blocco!!")
 
-        os.remove(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt")
-
+        os.remove(path_stop.txt) #replace with the path of stop.txt (the position must be equal for all the stop.txt)
+        
     n_pause += 1
     
-    processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True) #replace with the path of the resume_timer.bat file
+    processo = subprocess.Popen(path_resume_timer.bat, shell = True) #replace with the path of the resume_timer.bat file
 
     pygame.mixer.music.unpause()
 
@@ -501,7 +505,7 @@ def Cue():
 
         print ("attivo il .txt di blocco!!")
 
-        f3 = open(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt", "w")
+        f3 = open(path_stop.txt, "w") # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
         f3.write("3")
 
@@ -525,7 +529,7 @@ def Cue():
 
     pygame.mixer.music.set_pos(pos)
 
-    f1 = open (r"C:\Users\Emanuele\Desktop\python\progetti\get_pos.txt", "w")
+    f1 = open (path_get_pos.txt, "w") # replace with the path of get_pos.txt (the position must be equal for all the get_pos.txt)
 
     f1.write(str(position_i))
 
@@ -533,7 +537,7 @@ def Cue():
 
     n_loop = int(len_seconds) - int(position_i)
 
-    f1 = open (r"C:\Users\Emanuele\Desktop\python\progetti\n_loop.txt", "w")
+    f1 = open (path_n_loop.txt, "w") # replace with the path of n_loop.txt (the position must be equal for all the n_loop.txt)
 
     f1.write(str(n_loop))
 
@@ -545,9 +549,9 @@ def Cue():
 
         print ("elimino il .txt di blocco!!")
 
-        os.remove(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt")
+        os.remove(path_stop.txt) #replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
-    processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True) #replace with the path of the resume_timer.bat file
+    processo = subprocess.Popen(path_resume_timer.bat, shell = True) #replace with the path of the resume_timer.bat file
     
     n_pause += 1
 
@@ -601,7 +605,7 @@ def all_loop():
 
     if (n_pause >= 1):
 
-        f3 = open(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt", "w")
+        f3 = open(path_stop.txt, "w") # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
         f3.write("3")
 
@@ -637,7 +641,7 @@ def all_loop():
 
     len_seconds = durate[n_song_r]
 
-    f = open (r"C:\Users\Emanuele\Desktop\python\progetti\get_pos.txt", "w")
+    f = open (path_get_pos.txt, "w") # replace with the path of get_pos.txt (the position must be equal for all the get_pos.txt)
 
     f.write(str(res_pass))
 
@@ -663,7 +667,7 @@ def all_loop():
 
     print(str(res_pass_m) + " : " + str(res_pass_sec))
 
-    f1 = open (r"C:\Users\Emanuele\Desktop\python\progetti\n_loop.txt", "w")
+    f1 = open (path_n_loop.txt, "w") #replace with the path of n_loop.txt (the position must be equal for all the n_loop.txt)
 
     f1.write(str(n_loop))
 
@@ -673,11 +677,11 @@ def all_loop():
 
         time.sleep(1)
 
-        os.remove(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt")
+        os.remove(path_stop.txt) #replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
     n_pause += 1
 
-    processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True)
+    processo = subprocess.Popen(path_resume_timer.bat, shell = True) # replace with the path of resume_timer.bat 
 
     return n_pause
 
@@ -697,7 +701,7 @@ def half_loop():
 
     if (n_pause >= 1):
 
-        f3 = open(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt", "w")
+        f3 = open(path_stop.txt, "w") #replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
         f3.write("3")
 
@@ -733,7 +737,7 @@ def half_loop():
 
     len_seconds = durate[n_song_r]
 
-    f = open (r"C:\Users\Emanuele\Desktop\python\progetti\get_pos.txt", "w")
+    f = open (path_get_pos.txt, "w") # replace with the path of get_pos.txt (the position must be equal for all the get_pos.txt)
 
     f.write(str(res_pass))
 
@@ -759,7 +763,7 @@ def half_loop():
 
     print(str(res_pass_m) + " : " + str(res_pass_sec))
 
-    f1 = open (r"C:\Users\Emanuele\Desktop\python\progetti\n_loop.txt", "w")
+    f1 = open (path_n_loop.txt, "w") # replace with the path of n_loop.txt (the position must be equal for all the n_loop.txt)
 
     f1.write(str(n_loop))
 
@@ -769,11 +773,11 @@ def half_loop():
 
         time.sleep(1)
 
-        os.remove(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt")
+        os.remove(path_stop.txt) # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
     n_pause += 1
 
-    processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True)
+    processo = subprocess.Popen(path_resume_timer.bat, shell = True) #replace with the path of resume_timer.bat
 
     return n_pause
 
@@ -793,7 +797,7 @@ def quarter_loop():
 
     if (n_pause >= 1):
 
-        f3 = open(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt", "w")
+        f3 = open(path_stop.txt, "w") # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
         f3.write("3")
 
@@ -831,7 +835,7 @@ def quarter_loop():
 
     len_seconds = durate[n_song_r]
 
-    f = open (r"C:\Users\Emanuele\Desktop\python\progetti\get_pos.txt", "w")
+    f = open (path_get_pos.txt, "w") # replace with the path of get_pos.txt (the position must be equal for all the get_pos.txt)
 
     f.write(str(res_pass))
 
@@ -857,7 +861,7 @@ def quarter_loop():
 
     print(str(res_pass_m) + " : " + str(res_pass_sec))
 
-    f1 = open (r"C:\Users\Emanuele\Desktop\python\progetti\n_loop.txt", "w")
+    f1 = open (path_n_loop, "w") # replace with the path of n_loop.txt (the position must be equal for all the n_loop.txt)
 
     f1.write(str(n_loop))
 
@@ -867,11 +871,11 @@ def quarter_loop():
 
         time.sleep(1)
 
-        os.remove(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt")
+        os.remove(path_stop.txt) # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
     n_pause += 1
 
-    processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True)
+    processo = subprocess.Popen(path_resume_timer.bat, shell = True) # replace with the path of resume_timer.bat
 
     return n_pause
 
@@ -891,7 +895,7 @@ def eight_loop():
 
     if (n_pause >= 1):
 
-        f3 = open(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt", "w")
+        f3 = open(path_stop.txt, "w") # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
         f3.write("3")
 
@@ -927,7 +931,7 @@ def eight_loop():
 
     len_seconds = durate[n_song_r]
 
-    f = open (r"C:\Users\Emanuele\Desktop\python\progetti\get_pos.txt", "w")
+    f = open (path_get_pos.txt, "w") # replace with the path of get_pos.txt (the position must be equal for all the get_pos.txt)
 
     f.write(str(res_pass))
 
@@ -953,7 +957,7 @@ def eight_loop():
 
     print(str(res_pass_m) + " : " + str(res_pass_sec))
 
-    f1 = open (r"C:\Users\Emanuele\Desktop\python\progetti\n_loop.txt", "w")
+    f1 = open (path_n_loop.txt, "w") # replace with the path of n_loop.txt (the position must be equal for all the n_loop.txt)
 
     f1.write(str(n_loop))
 
@@ -963,11 +967,11 @@ def eight_loop():
 
         time.sleep(1)
 
-        os.remove(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt")
+        os.remove(stop.txt) # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
     n_pause += 1
 
-    processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True)
+    processo = subprocess.Popen(path_resume_timer.bat, shell = True) # replace with the path of resume_timer.bat
 
     return n_pause
 
@@ -987,7 +991,7 @@ def sixteen_loop():
 
     if (n_pause >= 1):
 
-        f3 = open(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt", "w")
+        f3 = open(path_stop.txt, "w") # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
         f3.write("3")
 
@@ -1023,7 +1027,7 @@ def sixteen_loop():
 
     len_seconds = durate[n_song_r]
 
-    f = open (r"C:\Users\Emanuele\Desktop\python\progetti\get_pos.txt", "w")
+    f = open (path_get_pos.txt, "w") # replace with the path of get_pos.txt (the position must be equal for all the get_pos.txt)
 
     f.write(str(res_pass))
 
@@ -1049,7 +1053,7 @@ def sixteen_loop():
 
     print(str(res_pass_m) + " : " + str(res_pass_sec))
 
-    f1 = open (r"C:\Users\Emanuele\Desktop\python\progetti\n_loop.txt", "w")
+    f1 = open (path_n_loop.txt, "w") # replace with the path of n_loop.txt (the position must be equal for all the n_loop.txt)
 
     f1.write(str(n_loop))
 
@@ -1059,11 +1063,11 @@ def sixteen_loop():
 
         time.sleep(1)
 
-        os.remove(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt")
+        os.remove(path_stop.txt) # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
     n_pause += 1
 
-    processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True)
+    processo = subprocess.Popen(path_resume_timer.bat, shell = True) # replace with the path of resume_timer.bat
 
     return n_pause
 
@@ -1083,7 +1087,7 @@ def thirtytwo_loop():
 
     if (n_pause >= 1):
 
-        f3 = open(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt", "w")
+        f3 = open(path_stop.txt, "w") # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
         f3.write("3")
 
@@ -1119,7 +1123,7 @@ def thirtytwo_loop():
 
     len_seconds = durate[n_song_r]
 
-    f = open (r"C:\Users\Emanuele\Desktop\python\progetti\get_pos.txt", "w")
+    f = open (path_get_pos.txt, "w") # replace with the path of get_pos.txt (the position must be equal for all the get_pos.txt)
 
     f.write(str(res_pass))
 
@@ -1145,7 +1149,7 @@ def thirtytwo_loop():
 
     print(str(res_pass_m) + " : " + str(res_pass_sec))
 
-    f1 = open (r"C:\Users\Emanuele\Desktop\python\progetti\n_loop.txt", "w")
+    f1 = open (path_n_loop.txt, "w") # replace with the path of n_loop.txt (the position must be equal for all the n_loop.txt)
 
     f1.write(str(n_loop))
 
@@ -1155,11 +1159,11 @@ def thirtytwo_loop():
 
         time.sleep(1)
 
-        os.remove(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt")
+        os.remove(path_stop.txt) # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
     n_pause += 1
 
-    processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True)
+    processo = subprocess.Popen(path_resume_timer.bat, shell = True) # replace with the path of resume_timer.bat
 
     return n_pause
 
@@ -1179,7 +1183,7 @@ def sixtyfour_loop():
 
     if (n_pause >= 1):
 
-        f3 = open(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt", "w")
+        f3 = open(path_stop.txt, "w")  # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
         f3.write("3")
 
@@ -1215,7 +1219,7 @@ def sixtyfour_loop():
 
     len_seconds = durate[n_song_r]
 
-    f = open (r"C:\Users\Emanuele\Desktop\python\progetti\get_pos.txt", "w")
+    f = open (path_get_pos.txt, "w")  # replace with the path of get_pos.txt (the position must be equal for all the get_pos.txt)
 
     f.write(str(res_pass))
 
@@ -1241,7 +1245,7 @@ def sixtyfour_loop():
 
     print(str(res_pass_m) + " : " + str(res_pass_sec))
 
-    f1 = open (r"C:\Users\Emanuele\Desktop\python\progetti\n_loop.txt", "w")
+    f1 = open (path_n_loop.txt, "w")  # replace with the path of n_loop.txt (the position must be equal for all the n_loop.txt)
 
     f1.write(str(n_loop))
 
@@ -1251,11 +1255,11 @@ def sixtyfour_loop():
 
         time.sleep(1)
 
-        os.remove(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt")
+        os.remove(path_stop.txt)  # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
     n_pause += 1
 
-    processo = subprocess.Popen(r"C:\Users\Emanuele\Desktop\python\progetti\resume_timer.bat", shell = True)
+    processo = subprocess.Popen(path_resume_timer.bat, shell = True)  # replace with the path of resume_timer.bat
 
     return n_pause
 
@@ -1265,7 +1269,7 @@ def exiter_c():
 
     proc.terminate()
 
-    f3 = open(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt", "w")
+    f3 = open(path_stop.txt, "w")  # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
     f3.write("3")
 
@@ -1273,7 +1277,7 @@ def exiter_c():
 
     time.sleep(1)
 
-    os.remove(r"C:\Users\Emanuele\Desktop\python\progetti\fermati.txt")
+    os.remove(path_stop.txt)  # replace with the path of stop.txt (the position must be equal for all the stop.txt)
 
     finestra.quit()
 
@@ -1285,7 +1289,7 @@ def show_preview(): # this function is raccomended to use at the song pause, bec
     
     path_2 = lista_canzoni[n_song]
     
-    percorso = r"C:\Users\Emanuele\Desktop\python\progetti\Chiavetta USB" # replace with the path of the folder of the music to play 
+    percorso = path_songs_place # replace with the path of the folder of the music to play 
 
     path = percorso + "\\" + path_2
 
@@ -1319,7 +1323,7 @@ def show_preview(): # this function is raccomended to use at the song pause, bec
      
     plt.plot(data)
 
-    save_path = r"C:\Users\Emanuele\Desktop\python\progetti"
+    save_path = path_graphic #replace with the place of the path for the graphic (the position must be equal for all the path_graphic)
 
     file_save = save_path + "\\" + (file_wav.replace(".wav", ""))
 
