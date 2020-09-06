@@ -1,4 +1,4 @@
-# Dj-Player
+# Dj-Player v 2.0
 
 REQUIREMENTS:
 
