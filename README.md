@@ -1,24 +1,8 @@
 # Dj-Player
 
-ONLY FOR WINDOWS!!!! (I WILL IMPLEMENT OTHER O.S. AS SOON AS POSSIBLE)
+Hi, here you the program to read and play .mp3 with basic djing feature!
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-REQUIREMENTS:
-
-The program need to install this package :
-pip install pygame (copy and execute this line in the cmd)
+Just select your version (in the wiki documentation you will find the different features) and follow the instructions by the "readme.txt"!!
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSTALLATION:
-
-Download the .py and the two .bat.
-Move the file in the same folder!!
+I hope you enjoy the program, Progxy :) !!
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-HOW TO OPEN:
-
-Run the .py in the IDLE or in Python's IDEs after read and replace the comments line!!
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-FOR ANY ISSUES OR QUESTIONS CONSULT THE PROJECT WIKI, BEFORE ASKING ME!!
-
-!! If you want, report me to implement the executable version !!
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-THANK YOU FOR UNDERSTANDING, Progxy :) !!
