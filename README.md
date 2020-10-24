@@ -2,7 +2,7 @@
 
 Hi, here you the program to read and play .mp3 with basic djing feature!
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Just select your version (in the wiki documentation you will find the different features) and follow the instructions by the "readme.txt"!!
+Just select your version (in the wiki documentation you will find the different features) and follow the instructions by the "readme.txt" of the selected version!!
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 I hope you enjoy the program, Progxy :) !!
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
