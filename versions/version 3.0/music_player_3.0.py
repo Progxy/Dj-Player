@@ -72,7 +72,7 @@ listbox1.grid(row = 10, column = 4)
 
 er = 0
 
-os.chdir(r"C:\Users\Emanuele\Desktop\Informatica\python\progetti\Chiavetta USB") 
+os.chdir(r"the full path of the song's folder") 
 
 lista = os.listdir()
 
@@ -179,7 +179,7 @@ def play ():
     
     path_2 = song_prov
     
-    percorso = r"C:\Users\Emanuele\Desktop\Informatica\python\progetti\Chiavetta USB" # replace with the path of the folder of the music to play 
+    percorso = r"the full path of the song's folder"  
 
     path = percorso + "\\" + path_2
 
@@ -225,7 +225,7 @@ def play ():
      
     plt.plot(data)
 
-    save_path = r"C:\Users\Emanuele\Desktop\Informatica\python\progetti"
+    save_path = r"the full path of the folder for the song's spectrum" 
 
     file_save = save_path + "\\" + (file_wav.replace(".wav", ""))
 
@@ -782,7 +782,7 @@ def show_preview():
     
     path_2 = song_prov
     
-    percorso = r"C:\Users\Emanuele\Desktop\Informatica\python\progetti\Chiavetta USB" # replace with the path of the folder of the music to play 
+    percorso = r"the full path of the song's folder" 
 
     path = percorso + "\\" + path_2
 
@@ -814,7 +814,7 @@ def show_preview():
      
     plt.plot(data)
 
-    save_path = r"C:\Users\Emanuele\Desktop\Informatica\python\progetti"
+    save_path = r"the full path of the folder choosen for the song's spectrum" 
 
     file_save = save_path + "\\" + (file_wav.replace(".wav", ""))
 
@@ -1065,7 +1065,7 @@ def change_tempo():
 
     try :
 
-        os.chdir(r"C:\Users\Emanuele\Desktop\Informatica\python\progetti\Chiavetta USB") 
+        os.chdir(r"the full path of the song's folder") 
 
         listarella = os.listdir()
 
@@ -1081,7 +1081,7 @@ def change_tempo():
 
         return ex
 
-    os.chdir(r"C:\Users\Emanuele\Desktop\Informatica\python\progetti\Chiavetta USB") 
+    os.chdir(r"the full path of the song's folder") 
 
     bpm_dtctd = int(b_pmer)
     
@@ -1115,7 +1115,7 @@ def change_tempo():
 
     ris_f = int(ris2)
 
-    pather = r"C:\Users\Emanuele\Desktop\Informatica\python\progetti\Chiavetta USB" # replace with the path of the folder of the music to play 
+    pather = r"the full path of the song's folder" 
 
     path23 = pather + "\\" + bpm_to_change2
 
