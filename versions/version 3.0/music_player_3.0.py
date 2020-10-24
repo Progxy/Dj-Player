@@ -108,6 +108,8 @@ durations = 0
 
 song_name2 = 0 
 
+b_pmer2 = 0
+
 def add(): 
 
     global song_prov
@@ -463,15 +465,9 @@ def ctrl_volume():
 
 def HotPoint():
 
-    global n, song_name2
+    global n, long
 
-    hot1 = pygame.mixer.music.get_pos()
-
-    hot = float(hot1) / 1000
-
-    if (song_name2 == 1):
-
-       hot += 13
+    hot = long
 
     n += 1
 
@@ -548,17 +544,17 @@ def block_timer():
 
 def all_loop():
 
-    global b_pmer, long
+    global long, b_pmer, song_name2, b_pmer2
 
-    bpm1 = b_pmer
+    if (song_name2 == 1):
+
+        bpm1 = b_pmer2
+    
+    else: bpm1 = b_pmer
 
     beat = (bpm1 / 60) * 4
 
-    loop_get_pos1 = pygame.mixer.music.get_pos()
-
-    loop_get_pos = loop_get_pos1 / 1000
-
-    tot_loop = 0
+    loop_get_pos = long
 
     n_looper_repeat = sp2.get()
 
@@ -568,205 +564,175 @@ def all_loop():
 
         pygame.mixer.music.set_pos(loop_get_pos)
 
-    result_s = int(loop_get_pos)
-
-    result_pass = round(result_s, None)
-
-    res_pass = int(result_pass)
-
-    long = int(res_pass)
+    long = loop_get_pos
 
     return long, time_translator()
 
 def half_loop():
 
-    global long, b_pmer
+    global long, b_pmer, song_name2, b_pmer2
 
-    bpm1 = b_pmer
+    if (song_name2 == 1):
+
+        bpm1 = b_pmer2
+    
+    else: bpm1 = b_pmer
 
     beat = (bpm1 / 60) * 4
 
-    loop_get_pos1 = pygame.mixer.music.get_pos()
-
-    loop_get_pos = loop_get_pos1 / 1000
+    loop_get_pos = long
 
     n_looper_repeat = sp2.get()
+    
+    waiter_time = beat/2
 
     for i in range (0, int(n_looper_repeat)):
-
-        waiter_time = beat/2
         
         time.sleep(waiter_time)
 
         pygame.mixer.music.set_pos(loop_get_pos)
 
-    result_s = int(loop_get_pos)
-
-    result_pass = round(result_s, None)
-
-    res_pass = int(result_pass)
-
-    long = int(res_pass)
+    long = loop_get_pos
 
     return long, time_translator()
 
 def quarter_loop():
 
-    global long, b_pmer
+    global long, b_pmer, song_name2, b_pmer2
 
-    bpm1 = b_pmer
+    if (song_name2 == 1):
+
+        bpm1 = b_pmer2
+    
+    else: bpm1 = b_pmer
 
     beat = (bpm1 / 60) * 4
 
-    loop_get_pos1 = pygame.mixer.music.get_pos()
-
-    loop_get_pos = loop_get_pos1 / 1000
+    loop_get_pos = long
 
     n_looper_repeat = sp2.get()
+    
+    waiter_time = beat/4
 
     for i in range (0, int(n_looper_repeat)):
-
-        waiter_time = beat/4
         
         time.sleep(waiter_time)
 
         pygame.mixer.music.set_pos(loop_get_pos)
 
-    result_s = int(loop_get_pos)
-
-    result_pass = round(result_s, None)
-
-    res_pass = int(result_pass)
-
-    long = int(res_pass)
+    long = loop_get_pos
 
     return long, time_translator()
 
 def eight_loop():
 
-    global long, b_pmer
+    global long, b_pmer, song_name2, b_pmer2
 
-    bpm1 = b_pmer
+    if (song_name2 == 1):
+
+        bpm1 = b_pmer2
+    
+    else: bpm1 = b_pmer
 
     beat = (bpm1 / 60) * 4
 
-    loop_get_pos1 = pygame.mixer.music.get_pos()
-
-    loop_get_pos = loop_get_pos1 / 1000
+    loop_get_pos = long
 
     n_looper_repeat = sp2.get()
+    
+    waiter_time = beat/8
 
     for i in range (0, int(n_looper_repeat)):
-
-        waiter_time = beat/8
         
         time.sleep(waiter_time)
 
         pygame.mixer.music.set_pos(loop_get_pos)
 
-    result_s = int(loop_get_pos)
-
-    result_pass = round(result_s, None)
-
-    res_pass = int(result_pass)
-
-    long = int(res_pass)
+    long = loop_get_pos
 
     return long, time_translator()
 
 def sixteen_loop():
 
-    global long, b_pmer
+    global long, b_pmer, song_name2, b_pmer2
 
-    bpm1 = b_pmer
+    if (song_name2 == 1):
+
+        bpm1 = b_pmer2
+    
+    else: bpm1 = b_pmer
 
     beat = (bpm1 / 60) * 4
 
-    loop_get_pos1 = pygame.mixer.music.get_pos()
-
-    loop_get_pos = loop_get_pos1 / 1000
+    loop_get_pos = long
 
     n_looper_repeat = sp2.get()
+    
+    waiter_time = beat/16
 
     for i in range (0, int(n_looper_repeat)):
-
-        waiter_time = beat/16
         
         time.sleep(waiter_time)
 
         pygame.mixer.music.set_pos(loop_get_pos)
 
-    result_s = int(loop_get_pos)
-
-    result_pass = round(result_s, None)
-
-    res_pass = int(result_pass)
-
-    long = int(res_pass)
+    long = loop_get_pos
 
     return long, time_translator()
 
 def thirtytwo_loop():
 
-    global long, b_pmer
+    global long, b_pmer, song_name2, b_pmer2
 
-    bpm1 = b_pmer
+    if (song_name2 == 1):
+
+        bpm1 = b_pmer2
+    
+    else: bpm1 = b_pmer
 
     beat = (bpm1 / 60) * 4
 
-    loop_get_pos1 = pygame.mixer.music.get_pos()
-
-    loop_get_pos = loop_get_pos1 / 1000
+    loop_get_pos = long
 
     n_looper_repeat = sp2.get()
+    
+    waiter_time = beat/32
 
     for i in range (0, int(n_looper_repeat)):
-
-        waiter_time = beat/32
         
         time.sleep(waiter_time)
 
         pygame.mixer.music.set_pos(loop_get_pos)
 
-    result_s = int(loop_get_pos)
-
-    result_pass = round(result_s, None)
-
-    res_pass = int(result_pass)
-
-    long = int(res_pass)
+    long = loop_get_pos
 
     return long, time_translator()
 
 def sixtyfour_loop():
 
-    global long, b_pmer
+    global long, b_pmer, song_name2, b_pmer2
 
-    bpm1 = b_pmer
+    if (song_name2 == 1):
+
+        bpm1 = b_pmer2
+    
+    else: bpm1 = b_pmer
 
     beat = (bpm1 / 60) * 4
 
-    loop_get_pos1 = pygame.mixer.music.get_pos()
-
-    loop_get_pos = loop_get_pos1 / 1000
+    loop_get_pos = long
 
     n_looper_repeat = sp2.get()
+    
+    waiter_time = beat/64
 
     for i in range (0, int(n_looper_repeat)):
-
-        waiter_time = beat/64
         
         time.sleep(waiter_time)
 
         pygame.mixer.music.set_pos(loop_get_pos)
 
-    result_s = int(loop_get_pos)
-
-    result_pass = round(result_s, None)
-
-    res_pass = int(result_pass)
-
-    long = int(res_pass)
+    long = loop_get_pos
 
     return long, time_translator()
 
@@ -1059,7 +1025,7 @@ def sixtyfour_looper():
 
 def change_tempo():
 
-    global song_name, durations, b_pmer
+    global song_name, durations, b_pmer, b_pmer2
 
     global lenght, long, song_name2
 
@@ -1169,10 +1135,12 @@ def change_tempo():
     long = int(long2)
 
     lenght = int(len_new) + 1
+    
+    b_pmer2 = pre_bpm
 
     pygame.mixer.music.set_pos(long2)
 
-    return song_name2, lenght, long, time_translator()
+    return song_name2, b_pmer2, lenght, long, time_translator()
 
 def change_tempor():
 
