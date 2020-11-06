@@ -76,7 +76,7 @@ er = 0
 
 rt = 0
 
-os.chdir(r"C:\Users\Emanuele\Desktop\Informatica\python\progetti\Chiavetta USB") 
+os.chdir(r"...") # replace with the path of the folder of the music to play
 
 lista = os.listdir()
 
@@ -187,7 +187,7 @@ def play ():
     
     path_2 = song_prov
     
-    percorso = r"C:\Users\Emanuele\Desktop\Informatica\python\progetti\Chiavetta USB" # replace with the path of the folder of the music to play 
+    percorso = r"..." # replace with the path of the folder of the music to play 
 
     path = percorso + "\\" + path_2
 
@@ -233,7 +233,7 @@ def play ():
      
     plt.plot(data)
 
-    save_path = r"C:\Users\Emanuele\Desktop\Informatica\python\progetti"
+    save_path = r"..." # folder where save the song's analysis
 
     file_save = save_path + "\\" + (file_wav.replace(".wav", ""))
 
@@ -793,7 +793,7 @@ def show_preview():
     
     path_2 = song_prov
     
-    percorso = r"C:\Users\Emanuele\Desktop\Informatica\python\progetti\Chiavetta USB" # replace with the path of the folder of the music to play 
+    percorso = r"..." # replace with the path of the folder of the music to play
 
     path = percorso + "\\" + path_2
 
@@ -825,7 +825,7 @@ def show_preview():
      
     plt.plot(data)
 
-    save_path = r"C:\Users\Emanuele\Desktop\Informatica\python\progetti"
+    save_path = r"..." # the path of the folder where save the song's analysis
 
     file_save = save_path + "\\" + (file_wav.replace(".wav", ""))
 
@@ -978,7 +978,7 @@ def change_tempo():
 
     try :
 
-        os.chdir(r"C:\Users\Emanuele\Desktop\Informatica\python\progetti\Chiavetta USB") 
+        os.chdir(r"..." # replace with the path of the folder of the music to play") 
 
         listarella = os.listdir()
 
@@ -994,7 +994,7 @@ def change_tempo():
 
         return ex
 
-    os.chdir(r"C:\Users\Emanuele\Desktop\Informatica\python\progetti\Chiavetta USB") 
+    os.chdir(r"..." # replace with the path of the folder of the music to play) 
 
     bpm_dtctd = int(b_pmer)
     
@@ -1020,7 +1020,7 @@ def change_tempo():
 
     os.remove(bpm_to_change)
 
-    pather = r"C:\Users\Emanuele\Desktop\Informatica\python\progetti\Chiavetta USB" # replace with the path of the folder of the music to play 
+    pather = r"..." # replace with the path of the folder of the music to play
 
     path23 = pather + "\\" + bpm_to_change2
 
